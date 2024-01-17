@@ -1,5 +1,6 @@
 :root {
     --blue: rgb(192, 39, 167);
+    --lightBlue: rgb(247, 216, 242);
     --bg: rgb(27, 29, 28);
     --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -88,7 +89,7 @@ body{
 
 }
 
-.home h2, .info h2{
+.home h2, .info h2, .story h2, .gallery h2{
     color: var(--blue);
     font-family: 'Sacramento';
     font-size: 5rem;
@@ -174,6 +175,141 @@ body{
     font-weight: 300;
     font-size: 0.8rem;
 }
+
+.story, .gallery{
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+}
+
+.story span, .gallery span{
+    text-transform: uppercase;
+    color: #666;
+    font-size:  0.9rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.story p, .gallery p{
+    font-size: 1rem;
+    font-weight: 400 ;
+
+}
+
+.timeline{
+    list-style: none;
+    padding: 1.4rem 0;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.timeline::before{
+    content: '';
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 1px;
+    background-color: #ccc;
+    left: 50%;
+}
+
+.timeline li{
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.timeline li::before, .timeline li::after{
+    content: '';
+    display: table;
+}
+
+.timeline li::after{
+    clear: both;
+}
+
+
+.timeline li .timeline-image{
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    background-color: #ccc;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 1rem;
+}
+
+.timeline li .timeline-panel{
+    width: 40%;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    position: relative;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+
+.timeline li .timeline-panel::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    /* width: 30px;
+    height: 30px;
+    background-color: #444;
+    border: 1px solid #ccc;
+    position: relative;
+    transform: rotate(45deg);
+    z-index: -1; */
+    right: -15px;
+    top: 80px;
+}
+.timeline li .timeline-panel::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    right: -13px;
+    top: 81px;
+}
+
+.timeline li.timeline-inverted .timeline-panel{
+    float: right;
+}
+
+.timeline li.timeline-inverted .timeline-panel::before{
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+}
+
+.timeline li.timeline-inverted .timeline-panel::after{
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+}
+
+.gallery{
+    background-color: var(--lightBlue);
+}
+
+
+
+
+
+
 /* media query x-large*/
 @media (max-width: 1200px){
     .home .heart{
@@ -192,6 +328,42 @@ body{
     .home .heart{
         display: none;  
     }
+
+    .timeline::before{
+        left: 60px;
+    }
+
+    .timeline li .timeline-image{
+        left: 15px;
+        margin-left: 45px;
+        top: 16px;
+    }
+
+    .timeline li .timeline-panel{
+        width: calc(100% - 200px);
+        float: right;
+        margin-top: 1rem;
+    }
+
+    .timeline li .timeline-panel, .timeline li.timeline-inverted .timeline-panel{
+        margin-top: 2rem;
+    }
+
+    .timeline li .timeline-panel::before{
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+        top: 70px;
+    }
+
+    .timeline li .timeline-panel::after{
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -13px;
+        right: auto;
+        top: 70px;
+    }
 }
     /* media query tablet*/
 @media (max-width: 768px){
@@ -202,10 +374,24 @@ body{
         padding: 65px;
         margin: 5px;
     }
+    .sticky-top{
+        overflow: hidden;
+    }
     .mynavbar .nav-link{
         font-size: 2rem;
         text-align: center;
     }   
+    .timeline li .timeline-image{
+        width: 140px;
+        height: 140px;
+    }
+    .timeline li .timeline-panel::before{
+        top: 50px;
+    }
+
+    .timeline li .timeline-panel::after{
+        top: 50px;
+    }
 }
     /* media query phone*/
 
@@ -216,5 +402,20 @@ body{
     .simply-countdown>.simply-section {
         padding: 45px;
         margin: 3px;
-    }  
+    } 
+    .timeline li .timeline-image{
+        width: 80px;
+        height: 80px;
+    } 
+    .timeline li .timeline-panel{
+        width: 65%;
+        transform: translateX(-20px);
+    }
+    .timeline li .timeline-panel::before{
+        top: 30px;
+    }
+
+    .timeline li .timeline-panel::after{
+        top: 30px;
+    }
 }
