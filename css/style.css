@@ -12,6 +12,16 @@ body{
     min-height: 4000px;
 }
 
+#page {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+
 .hero::before{
     content: '';
     position: absolute;
@@ -55,6 +65,7 @@ body{
     color: var(--blue);  
     background-color: white;
     box-shadow: var(--shadow);
+    border-radius: 24px;
 }
 
 .hero a:hover{
@@ -86,10 +97,16 @@ body{
     margin-top: -6rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
+    
 
 }
 
-.home h2, .info h2, .story h2, .gallery h2{
+.home h2, 
+.info h2, 
+.story h2, 
+.rsvp h2, 
+.gifts h2, 
+.gallery h2{
     color: var(--blue);
     font-family: 'Sacramento';
     font-size: 5rem;
@@ -176,12 +193,17 @@ body{
     font-size: 0.8rem;
 }
 
-.story, .gallery{
+.story, 
+.gallery, 
+.gifts, 
+.rsvp{
     padding-top: 10rem;
     padding-bottom: 8rem;
 }
 
-.story span, .gallery span{
+.story span, 
+.gifts span, 
+.gallery span{
     text-transform: uppercase;
     color: #666;
     font-size:  0.9rem;
@@ -190,7 +212,10 @@ body{
     margin-bottom: 1rem;
 }
 
-.story p, .gallery p{
+.story p, 
+.rsvp p, 
+.gifts p, 
+.gallery p{
     font-size: 1rem;
     font-weight: 400 ;
 
@@ -305,6 +330,35 @@ body{
     background-color: var(--lightBlue);
 }
 
+.rsvp{
+    background-color: var(--bg);
+}
+
+.rsvp h2{
+    font-size: 4.5rem;
+}
+
+.rsvp p, .rsvp form label{
+    color: white;
+}
+
+.rsvp button{
+    background-color: var(--blue);
+    color: white;
+    border: 1px solid var(--blue);
+}
+
+.rsvp button:hover{
+    background-color: white;
+    color: var(--blue);
+    border: 1px solid white;
+}
+
+#submit-button:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+ }
 
 
 
