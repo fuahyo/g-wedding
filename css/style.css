@@ -1,5 +1,5 @@
 :root {
-    --blue: rgb(192, 39, 167);
+    --blue: #F69D9D;
     --lightBlue: rgb(247, 216, 242);
     --bg: rgb(27, 29, 28);
     --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
@@ -8,9 +8,17 @@
 
 body{
     font-size: 1.2rem;
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
+    /* font-family: 'Work Sans', sans-serif; */
     min-height: 4000px;
 }
+
+
+
+    /* h1, h2, h3, h5, h6 {
+    font-family: "Montez", cursive;
+    margin: 0 0 30px 0;
+  } */
 
 #page {
     position: relative;
@@ -44,34 +52,104 @@ body{
     
 }
 
+
+.fh5co-overlay {
+  position: absolute !important;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+
 .hero h1, .hero h4, .hero p{
     text-shadow: var(--shadow);
 }
 
-.hero h1{
-    font-family: 'Sacramento', cursive;
-    font-size: 6rem;
+.hero h1 {
+    color: #fff;
+    font-size: 100px;
+    font-family: "Montez", cursive;
+    margin: 0 0 30px 0;
+}
+.hero h3 {
+    color: #fff;
+    font-size: 50px;
+    margin-bottom: 0;
+    font-family: "Montez", cursive;
+    margin: 0 0 30px 0;
 }
 
+.hero h2 {
+    color: #fff;
+    font-size: 80px;
+    margin-bottom: 30px;
+    font-weight: 300 !important;
+}
+
+.hero h2 strong {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .hero h2 {
+    font-size: 60px;
+    }
+}
+
+.hero p {
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 7px;
+    /* padding-bottom: 200px; */
+}
+
+.hero p span {
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 5px 0px;
+}
+
+/* .hero h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 6rem;
+} */
+
 .hero h4{
-    font-size: 1.6rem;
+    margin-top: 250px;
+    font-size: 1rem;
+    left: 50%;
 }
 
 .hero p{
+
     font-size: 1.4rem;
 }
 
 .hero a{
-    color: var(--blue);  
+    /* color: var(--blue);   */
     background-color: white;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     border-radius: 24px;
+    color: #F69D9D;
+    -webkit-transition: 0.5s, ease;
+    -o-transition: 0.5s, ease;
+    transition: 0.5s, ease;
+    
 }
 
 .hero a:hover{
-    color: white;  
-    background-color: var(--blue);
+    /* color: white;   */
+    background-color: #F69D9D;
+    text-decoration: none;
+    color: white;
+    border-radius: 24px;
 }
+
 
 .mynavbar{
     background-color: rgba(255, 255, 255, 0.3) !important;
@@ -81,8 +159,9 @@ body{
     height: 100vh;
 }
 .mynavbar .navbar-brand, .mynavbar .offcanvas-title{
-    font-family: 'Sacramento', cursive;
+    font-family: 'Montez', cursive;
     font-size: 3.2rem;
+    color: var(--blue);
     font-weight: bold;
 }
 .mynavbar .nav-link{
@@ -91,11 +170,12 @@ body{
 }
 
 .home{
-    background-image: url(../img/floral2.jpg);
+    /* background-image: url(../img/floral2.jpg); */
+    background-color: #edeeed;
     background-size: cover;
     min-height: 100vh;
-    margin-top: -6rem;
-    padding-top: 15rem;
+    /* margin-top: -10rem; */
+    padding-top: 8rem;
     padding-bottom: 5rem;
     
 
@@ -105,7 +185,6 @@ body{
 .info h2, 
 .story h2, 
 .rsvp h2, 
-.gifts h2, 
 .gallery h2{
     color: var(--blue);
     font-family: 'Sacramento';
@@ -116,6 +195,7 @@ body{
     color: #444;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-weight: bold;
 }
 .home p{
     color: #666;
@@ -124,34 +204,39 @@ body{
 
 .home .couple{
     margin-top: 100px;
+    margin-bottom: 60px;
 }
 
-.home .couple .h3{
-    font-family: 'Sacramento';
-    font-size: 2.4 rem;
-    color: var(--blue);
+.home .couple h3{
+    font-family: 'Montez';
+    font-size: 2.6rem;
+    /* color: var(--blue); */
+    text-align: center;
+    margin-top: 15px;
+    margin-left: -5px;
+    /* font-weight: bold; */
 }
 
 .home .couple img{
-    width: 100%;
+    width: 270px;
 }
 
 .home .heart{
-    width: 50px;
-    height: 50px;
-    background-color: white;
+    width: 70px;
+    height: 70px;
+    /* background-color: transparent; */
     display: flex;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* border-radius: 50%; */
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
     position: absolute;
     left: 50%;
-    transform: translateX(-50%) translateY(65px);
+    transform: translateX(-78%) translateY(110px);
 
 }
 .home .heart i{
     margin: auto;
     color: var(--blue);
-    font-size: 30px;
+    font-size: 50px;
 
 }
 
@@ -195,7 +280,6 @@ body{
 
 .story, 
 .gallery, 
-.gifts, 
 .rsvp{
     padding-top: 10rem;
     padding-bottom: 8rem;
@@ -330,8 +414,14 @@ body{
     background-color: var(--lightBlue);
 }
 
-.rsvp{
+.rsvp, .gifts{
     background-color: var(--bg);
+}
+
+.comments{
+    background-color: white;
+    padding-bottom: 4rem;
+    padding-top: 5rem;
 }
 
 .rsvp h2{
@@ -353,6 +443,34 @@ body{
     color: var(--blue);
     border: 1px solid white;
 }
+.gifts h2{
+    color: white;
+    font-family: 'Montez';
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    /* font-weight: bold; */
+}
+ .timer{
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+.gifts{
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+}
+
+.gifts h3{
+    color: rgb(206, 206, 206);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    /* margin-top: rem; */
+    /* font-weight: bold; */
+}
+
+.timer{
+    background-color: var(--blue);
+}
 
 #submit-button:disabled {
     background-color: #ccc;
@@ -366,6 +484,12 @@ footer{
     color: white;
 }
 
+footer h2{
+    color: white;
+    font-family: 'Montez';
+    font-size: 4rem;
+    /* font-weight: bold; */
+}
 footer a{
     color: white;
     font-weight: bold;
@@ -414,11 +538,18 @@ footer li{
         transform: rotate(360deg);
     }
 }
-
+@media (max-width: 1400px){
+    .home .heart{
+        /* display: none;   */
+        /* left: 98%; */
+        /* margin-left: 90px; */
+        transform: translateX(-50%) translateY(100px);  
+    }
+}
 /* media query x-large*/
 @media (max-width: 1200px){
     .home .heart{
-        transform: translateX(-50%) translateY(45px);  
+        display: none;  
     }
 }
 
